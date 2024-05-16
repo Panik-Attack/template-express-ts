@@ -1,11 +1,12 @@
 import { Router } from "express";
+import { getQuiz, sendResponse } from "../controllers/quiz.controller";
 
 const router = Router()
 
 
 
 // To get a quiz
-const getQuiz = router.get('/quiz', )
+router.get('/quiz', getQuiz )
 
 // To send a answer
-const sendAnswer = router.post('/quiz', )
+router.post('/quiz', sendResponse )
