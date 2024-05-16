@@ -1,8 +1,11 @@
 import { Router } from "express";
 import { createUser, getUser } from "../controllers/user.controller";
+import { validatorLogin, validatorRegister } from "../validations/register";
 
-const router= Router()
+const userRouter = Router()
 
-router.get('/user', getUser )
+userRouter.get(`/user/:id`, validatorLogin ,getUser )
 
-router.post('/user', createUser )
+userRouter.post('/user', validatorRegister ,createUser )
+
+export default userRouter
