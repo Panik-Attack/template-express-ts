@@ -22,7 +22,7 @@ export const sendResponse = async (req: any, res: Response) => {
     const answer = quizList?.answers?.find( (answ: any) => answ.id === IdSelec  )
 
     if (answer?.isAnswer){
-      return res.send(true)
+      res.send(true)
     } else {
       res.send(false)
     }
